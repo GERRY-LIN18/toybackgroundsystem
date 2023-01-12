@@ -1,24 +1,20 @@
-# 0112_1
+## yc 的玩具後台系統
 
-## Project setup
 ```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
+vue2
+element UI
+axios 二次封裝
+mock模擬後端
+版本選擇為了練手
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
+### 進度
 
-### Lints and fixes files
 ```
-npm run lint
-```
+總進度 20%
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+首頁面板 60%
+
+charts 處理中
+麵包屑未完成
+```
