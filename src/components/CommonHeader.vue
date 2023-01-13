@@ -1,14 +1,26 @@
 <template>
   <div class="bg_black">
     <el-row>
-      <el-col :span="22"
-        ><el-button
-          type="primary"
-          icon="el-icon-arrow-right"
-          size="small"
-          @click="handleMenu"
-        ></el-button
-      ></el-col>
+      <el-col :span="22">
+        <el-row>
+          <el-button
+            type="primary"
+            icon="el-icon-arrow-right"
+            size="small"
+            @click="handleMenu"
+          >
+          </el-button>
+          <el-breadcrumb separator="/">
+            <el-breadcrumb-item
+              v-for="i in tags"
+              :key="i"
+              :to="{ path: `i.path` }"
+            >
+              {{ i.label }}
+            </el-breadcrumb-item>
+          </el-breadcrumb></el-row
+        >
+      </el-col>
       <el-col :span="2" class="right">
         <el-dropdown>
           <span class="el-dropdown-link">
@@ -51,6 +63,7 @@ img {
 }
 </style>
 <script>
+import { mapState } from "vuex";
 export default {
   data() {
     return {};
@@ -60,6 +73,10 @@ export default {
       this.$store.commit("collapseMenu");
     },
   },
-  computed: {},
+  computed: {
+    ...mapState({
+      tags: (state) => state.tab.crumb,
+    }),
+  },
 };
 </script>

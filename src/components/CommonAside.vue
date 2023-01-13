@@ -13,7 +13,7 @@
         v-for="item in noChildren"
         :key="item.name"
         :index="item.name"
-        @click="go(item.path)"
+        @click="go(item)"
       >
         <i :class="`el-icon-${item.icon}`"></i>
         <span slot="title">{{ item.label }}</span>
@@ -104,8 +104,9 @@ export default {
     };
   },
   methods: {
-    go(path) {
-      if (this.$route.path !== path) this.$router.push(path);
+    go(item) {
+      if (this.$route.path !== item.path) this.$router.push(item.path);
+      this.$store.commit("crumbChange", item);
     },
   },
   computed: {

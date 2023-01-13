@@ -1,6 +1,4 @@
 import Mock from "mockjs";
+import homeData from "@/api/mockServerData/home";
 
-Mock.mock("/api/home/getData", () => {
-  console.log("攔截成功");
-  return 1;
-});
+Mock.mock("/api/home/getData", homeData.getStatisticalData);
