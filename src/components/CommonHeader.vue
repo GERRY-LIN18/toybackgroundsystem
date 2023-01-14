@@ -3,7 +3,7 @@
     <el-row>
       <el-col :span="22">
         <el-row>
-          <el-col :span="1">
+          <el-col :span="2">
             <el-button
               type="primary"
               icon="el-icon-arrow-right"
@@ -64,6 +64,10 @@ img {
 .right {
   display: flex;
   justify-content: flex-end;
+}
+.el-breadcrumb-item {
+  color: #fff;
+  font-weight: 600;
 }
 </style>
 <script>
