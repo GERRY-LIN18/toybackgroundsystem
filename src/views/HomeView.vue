@@ -124,7 +124,6 @@ export default {
       // echarts data 處理
       const { orderData, userData, videoData } = data.data;
       const xAsisData = Object.keys(orderData.data[0]);
-      console.log(userData);
       const seriesData = [];
       xAsisData.forEach((i) => {
         seriesData.push({

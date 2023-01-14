@@ -1,14 +1,14 @@
 <template>
-  <div>
+  <div style="height: 100%">
     <el-menu
-      default-active="1-4-1"
-      class="aside"
       :collapse="isCollapse"
       background-color="#545c64"
       text-color="#fff"
       active-text-color="#ffd04b"
+      class="aside"
     >
       <p class="yc">{{ !isCollapse ? "yc的玩具後台管理" : "後台" }}</p>
+
       <el-menu-item
         v-for="item in noChildren"
         :key="item.name"
@@ -30,11 +30,10 @@
         <el-menu-item-group
           v-for="subItem in item.children"
           :key="subItem.name"
-          width="auto"
         >
-          <el-menu-item @click="go(subItem.path)" :index="subItem.name">{{
-            subItem.label
-          }}</el-menu-item>
+          <el-menu-item @click="go(subItem)" :index="subItem.name">
+            {{ subItem.label }}
+          </el-menu-item>
         </el-menu-item-group>
       </el-submenu>
     </el-menu>
@@ -42,8 +41,12 @@
 </template>
 
 <style lang="scss">
+.aside:not(.el-menu--collapse) {
+  width: 200px;
+  min-height: 400px;
+}
 .aside {
-  height: 100vh;
+  height: 100%;
   border: 0;
 }
 
@@ -52,6 +55,7 @@
   font-weight: 600;
   text-align: center;
   width: 100%;
+  margin: 20px 0;
 }
 </style>
 <script>
@@ -62,41 +66,41 @@ export default {
         {
           path: "/home",
           name: "home",
-          label: "首頁",
+          label: "首页",
           icon: "s-home",
-          url: "home/home",
+          url: "Home.vue",
         },
         {
           path: "/mall",
           name: "mall",
           label: "商品管理",
           icon: "video-play",
-          url: "MallManage/MallManage",
+          url: "Mall.vue",
         },
         {
           path: "/user",
           name: "user",
-          label: "用戶管理",
+          label: "用户管理",
           icon: "user",
-          url: "userManage/userManage",
+          url: "User.vue",
         },
         {
           label: "其他",
           icon: "location",
           children: [
             {
-              path: "page1",
+              path: "/page1",
               name: "page1",
-              label: "頁面一",
+              label: "页面1",
               icon: "setting",
-              url: "other/PageOne",
+              url: "PageOne.vue",
             },
             {
               path: "/page2",
               name: "page2",
-              label: "頁面二",
+              label: "页面2",
               icon: "setting",
-              url: "other/pageTwo",
+              url: "PageTwo.vue",
             },
           ],
         },

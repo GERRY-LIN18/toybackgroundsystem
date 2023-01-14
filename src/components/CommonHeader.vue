@@ -3,22 +3,26 @@
     <el-row>
       <el-col :span="22">
         <el-row>
-          <el-button
-            type="primary"
-            icon="el-icon-arrow-right"
-            size="small"
-            @click="handleMenu"
-          >
-          </el-button>
-          <el-breadcrumb separator="/">
-            <el-breadcrumb-item
-              v-for="i in tags"
-              :key="i"
-              :to="{ path: `i.path` }"
+          <el-col :span="1">
+            <el-button
+              type="primary"
+              icon="el-icon-arrow-right"
+              size="small"
+              @click="handleMenu"
             >
-              {{ i.label }}
-            </el-breadcrumb-item>
-          </el-breadcrumb></el-row
+            </el-button
+          ></el-col>
+          <el-col :span="23">
+            <el-breadcrumb separator-class="el-icon-arrow-right">
+              <el-breadcrumb-item
+                v-for="i in tags"
+                :key="i.path"
+                :to="{ path: i.path }"
+              >
+                {{ i.label }}
+              </el-breadcrumb-item>
+            </el-breadcrumb></el-col
+          ></el-row
         >
       </el-col>
       <el-col :span="2" class="right">

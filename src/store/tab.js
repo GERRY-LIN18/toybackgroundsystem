@@ -28,6 +28,16 @@ export default {
           },
           val,
         ];
+      } else {
+        state.crumb = [
+          {
+            path: "/home",
+            name: "home",
+            label: "首頁",
+            icon: "s-home",
+            url: "home/home",
+          },
+        ];
       }
       console.log(state.crumb);
     },
