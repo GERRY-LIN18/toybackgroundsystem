@@ -1,4 +1,5 @@
 ## yc 的玩具後台系統
+![image](https://user-images.githubusercontent.com/110363016/212439733-d06cd1d1-f8a8-4426-aaf6-1806bc3a2c83.png)
 
 ```
 vue2
